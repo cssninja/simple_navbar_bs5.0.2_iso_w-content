@@ -41,6 +41,34 @@
       /* right justification thanks to: https://stackoverflow.com/questions/54394243/bootstrap-4-navbar-justify-menu-to-right .. also in docs: https://getbootstrap.com/docs/5.0/utilities/flex/#justify-content */
 
       /* lorem ipsum images thanks to: https://fakeimg.pl/ and https://github.com/Rydgel/Fake-images-please */
+
+            /* finally .. smooth transition for sub-menu, thanks to: https://stackoverflow.com/questions/12115833/adding-a-slide-effect-to-bootstrap-dropdown .. could not get transition to work somehow, may be blocked elsewhere, fix later
+
+      good animation here >
+
+      fadeInUp etc >
+      https://pionezero.com/appco/assets/css/animate.min.css
+      from
+      from https://animate.style/
+
+      base: https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name
+      */
+      @keyframes slideIn {
+        0% {
+            transform: translateY(1rem);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0rem);
+            opacity: 1;
+        }
+      }
+      .slideIn {
+          -webkit-animation-name: slideIn;
+          animation-name: slideIn;
+          animation-duration: 0.8s;
+          animation-fill-mode: both;
+      }
     </style>
 
     <!-- original bs cdn -->
@@ -74,7 +102,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Categories
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Category 1</a></li>
                   <li><a class="dropdown-item" href="#">Category 2</a></li>
                   <li><a class="dropdown-item" href="#">Category 3</a></li>
