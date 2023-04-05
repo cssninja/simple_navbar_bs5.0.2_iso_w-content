@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>simple_navbar_bs5.0.2_iso_w/content</title>
+    <title>simple_navbar_bs5.0.2_iso[MIVA_2]</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     
@@ -16,6 +16,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet"/>
     <style>
+      /* nab entire page background */
+      html {
+        background: #f4feff !important;
+      }
       body {
         margin: 0;
       }
@@ -42,7 +46,26 @@
 
       /* lorem ipsum images thanks to: https://fakeimg.pl/ and https://github.com/Rydgel/Fake-images-please */
 
-            /* finally .. smooth transition for sub-menu, thanks to: https://stackoverflow.com/questions/12115833/adding-a-slide-effect-to-bootstrap-dropdown .. could not get transition to work somehow, may be blocked elsewhere, fix later
+      /* search box width, thanks to: https://stackoverflow.com/questions/13915904/css3-media-query-not-working-with-max-width */
+      @media screen and (min-width: 1100px) {
+        .srcbx {
+          min-width: 500px !important;
+          background: #e8f0fe !important;
+        }
+      }
+      @media screen and (max-width: 1099.95px) {
+        .srcbx {
+        max-width: 200px !important;
+        background: #e8f0fe !important;
+        }
+      }
+      @media screen and (max-width: 1099.95px) {
+        .srcpar {
+          padding-left:2% !important;
+        }
+      }
+
+      /* finally .. smooth transition for sub-menu, thanks to: https://stackoverflow.com/questions/12115833/adding-a-slide-effect-to-bootstrap-dropdown .. could not get transition to work somehow, may be blocked elsewhere, fix later
 
       good animation here >
 
@@ -84,10 +107,15 @@
   <body>
 
     <div class="bs5">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- message section -->
+      <mvt:comment><mvt:item name="readytheme" param="contentsection( 'fasten_header' )" /></mvt:comment>
+      <mvt:comment><mvt:item name="navbar" /></mvt:comment>
+      <!-- / message section -->
+
+      <nav class="navbar navbar-expand-lg navbar-light" style="background:#e8f0fe">
         <div class="container-fluid">
           
-          <a style="max-width:50%;" class="navbar-brand" href="#"><img src="https://peakdentalstore.com/mm5/graphics/00000001/1/logo_edited.png"></a>
+          <a style="max-width:50%;" class="navbar-brand" href="https://peakdentalstore.com/storefront.html"><img src="https://peakdentalstore.com/mm5/graphics/00000001/1/logo_edited.png"></a>
           
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -95,38 +123,52 @@
           
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Shop All</a>
-              </li>
+              </li> -->
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categories
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#2b044d !important;font-size:1.1em !important;font-weight:bold !important;">
+                  Shop Categories
                 </a>
-                <ul class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Category 1</a></li>
-                  <li><a class="dropdown-item" href="#">Category 2</a></li>
-                  <li><a class="dropdown-item" href="#">Category 3</a></li>
-                  <li><a class="dropdown-item" href="#">Category 4</a></li>
+                <ul class="dropdown-menu slideIn" aria-labelledby="navbarDropdown" style="color:#2b044d !important;font-size:1em !important;background:#e8f0fe !important;">
+                  <li><a class="dropdown-item" href="https://peakdentalstore.com/category-1.html">Category 1</a></li>
+                  <li><a class="dropdown-item" href="https://peakdentalstore.com/category-2.html">Category 2</a></li>
+                  <li><a class="dropdown-item" href="https://peakdentalstore.com/category-3.html">Category 3</a></li>
+                  <li><a class="dropdown-item" href="https://peakdentalstore.com/category-4.html">Category 4</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Sale</a>
-              </li>
-              <li class="nav-item">
+              </li> -->
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Featured Products</a>
-              </li>
+              </li> -->
             </ul>
-            <form class="d-flex me-auto">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-primary" type="submit">Search</button>
+            <!-- added classes from line 69 ul mb-2 mb-lg-0 for vertical align -->
+            <form class="d-flex me-auto mb-2 mb-lg-0 srcpar">
+              <input class="form-control me-2 srcbx" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn" type="submit" style="background:#137bbe !important;color:#e8f0fe !important;">Search</button>
             </form>
-            <!-- me-auto disabled below to fully right justify menu -->
+            <!-- me-auto disabled below to fully right justify menu .. can use miva class t-site-header__masthead-links -->
             <ul class="navbar-nav mb-2 me-auto mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link me-4" aria-current="page" href="#">Sign In</a>
+              <li class="nav-item mt-2 &mvte:global:Session:shadows:checkout_hidden;" style="display:none;">
+                <!-- <a class="nav-link me-4" aria-current="page" href="#">Sign In</a> -->
+                <!-- SIGN IN -->
+                <mvt:item name="customerlink" />
+                <mvt:item name="readytheme" param="contentsection( 'global_account' )" />
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Cart</a>
+              <li class="nav-item my-2">
+                <!-- <a class="nav-link" href="#">Cart</a> -->
+                <!-- CART (maybe after customer log in) -->
+                <a class="t-site-header__basket-link" data-hook="open-mini-basket" aria-label="Open Mini-Basket" href="&mvte:urls:BASK:auto;" style="background:#e8f0fe;color:#2b044d;text-decoration:none;">
+                  <mvt:if expr="l.settings:global_minibasket:basket_count GT 0">
+                    <span class="u-icon-cart-full" aria-hidden="true"></span>
+                  <mvt:else>
+                    <span class="u-icon-cart-empty" aria-hidden="true"></span>
+                  </mvt:if>
+                  <span class="t-site-header__basket-link-quantity" data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+                </a>
+                <!-- / CART -->
               </li>
             </ul>
           </div>
