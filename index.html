@@ -92,6 +92,20 @@
           animation-duration: 0.8s;
           animation-fill-mode: both;
       }
+
+      /* thanks to: https://css-tricks.com/replace-the-image-in-an-img-with-css/ .. psd: 800w, 420h > 250w, 131h .. test img: https://fakeimg.pl/250x131/282828/eae0d0/ (don't use ?retina=1 .. makes img LARGER) .. variable: &mvt:locationlogo; */
+      .fix1 {
+        display: block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        background: url(https://peakdentalstore.com/mm5/graphics/00000001/1/logo_edited.png);
+        background-position: center; /* x% y% */
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 250px !important; /* Width of new image */
+        height: 131px !important; /* Height of new image */
+        padding-left: 250px; /* Equal to width of new image */
+    }
     </style>
 
     <!-- original bs cdn -->
@@ -115,7 +129,7 @@
       <nav class="navbar navbar-expand-lg navbar-light" style="background:#e8f0fe">
         <div class="container-fluid">
           
-          <a style="max-width:50%;" class="navbar-brand" href="https://peakdentalstore.com/storefront.html"><img src="https://peakdentalstore.com/mm5/graphics/00000001/1/logo_edited.png"></a>
+          <a style="max-width:50%;" class="navbar-brand" href="https://peakdentalstore.com/storefront.html"><img class="fix1"></a>
           
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
